@@ -1,0 +1,134 @@
+/* Общий стиль для обоих файлов */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .nav-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-panel ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .nav-panel li {
+    margin: 20px 0;
+  }
+  
+  .nav-panel a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+  }
+  
+  .nav-panel a:hover {
+    background-color: #444;
+    padding: 5px;
+  }
+  
+  .admin-container {
+    margin-left: 220px; /* Отступ для основного контейнера от панели навигации */
+    padding: 20px;
+    width: calc(100% - 240px); /* Чтобы основная панель не накладывалась на навигацию */
+  }
+  
+  .admin-panel {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .admin-header {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .admin-header .username {
+    margin-right: 20px;
+    font-weight: bold;
+  }
+  
+  .admin-header .logout-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .admin-header .logout-btn:hover {
+    background-color: #d32f2f;
+  }
+  
+  .section-toggle {
+    cursor: pointer;
+    background: #f0f0f0;
+    padding: 12px;
+    margin: 10px 0;
+    font-size: 18px;
+    text-align: left;
+    border-radius: 5px;
+  }
+  
+  .section-toggle:hover {
+    background: #ddd;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table th, table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  button.delete-btn {
+    background-color: #f44336;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button.delete-btn:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* Стили для адаптации на мобильных устройствах */
+  @media (max-width: 768px) {
+    .login {
+      padding: 20px;
+      max-width: 90%;
+    }
+  
+    .admin-container {
+      padding: 15px;
+      margin-left: 20px;
+      width: calc(100% - 40px);
+    }
+  
+    .nav-panel {
+      width: 160px;
+    }
+  }
+  

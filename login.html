@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Вход в админ-панель</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="login-container">
+    <h2>Вход</h2>
+    <input type="text" id="username" placeholder="Имя администратора" />
+    <input type="password" id="password" placeholder="Пароль" />
+    <button onclick="login()">Войти</button>
+    <p id="loginError" style="color: red;"></p>
+  </div>
+
+  <script>
+    function login() {
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const admins = JSON.parse(localStorage.getItem('admins')) || [];
+
+    //   const admin = admins.find(a => a.username === username && a.password === password);
+    const admin = admins.find(a => a.username === username && a.password === password);
+
+
+      if (admin) {
+        if (admin.isBlocked) {
+          document.getElementById('loginError').textContent = 'Администратор заблокирован.';
+          return;
+        }
+        localStorage.setItem('loggedInAdmin', admin.username);
+        window.location.href = 'admin.html';
+      } else {
+        document.getElementById('loginError').textContent = 'Неверное имя или пароль.';
+      }
+    }
+  </script>
+</body>
+</html>
